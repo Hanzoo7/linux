@@ -12,14 +12,15 @@ import apt, sys, subprocess
 
 def Get_Resources (parameters):
     resources = None
+    collect = apt.Cache()
     
-    for a in apt.Cache():
-        if a.name == parameters['name']:
-            if parameters['version'] in apt.Cache()[parameters['name']].versions or parameters['version'] == "latest" :
+    for c in collect:
+        if c.name == parameters['name']:
+            if parameters['version'] in collect[parameters['name']].versions or parameters['version'] == "latest" :
                 resources = {
-                    "name": a.name,
-                    "version": a.versions[0].version,
-                    "is_installed": a.is_installed,
+                    "name": c.name,
+                    "version": c.versions[0].version,
+                    "is_installed": c.is_installed,
                 }
 
     return resources
