@@ -5,4 +5,5 @@
     name: "{{ name }}"
     version: "{{ version }}"
     is_installed: "{{ is_installed }}"
+
     
