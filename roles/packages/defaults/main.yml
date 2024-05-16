@@ -1,0 +1,4 @@
+---
+# defaults file for packages
+version: latest
+is_installed: True

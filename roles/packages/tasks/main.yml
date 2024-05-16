@@ -1,0 +1,8 @@
+---
+# tasks file for packages
+- name: ensure package installation
+  aptInstall:
+    name: "{{ name }}"
+    version: "{{ version }}"
+    is_installed: "{{ is_installed }}"
+    
